@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6xDou0x8J5caEHkZKnQ7qvu3MI8lziNd/zDtV2YwRTg=",
+  "Source": "DisconnectedWebApi",
+  "BasePath": "_content/DisconnectedWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
