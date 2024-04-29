@@ -95,3 +95,40 @@ The UI layer is responsible for presenting data to users and capturing user inpu
 
 
 **Connected architecture in C# provides real-time data access and immediate updates by maintaining continuous connections to the data source. By structuring applications with separate layers for data access, business logic, and presentation, developers can build scalable and maintainable solutions that meet the requirements of modern applications.**
+
+
+
+# (3) Entity Framework Architecture in C#
+
+## Overview
+
+Entity Framework (EF) is an object-relational mapping (ORM) framework that enables developers to work with relational databases using strongly-typed .NET objects. It simplifies data access by eliminating the need for most of the data-access code that developers usually need to write. This README provides an overview of the architecture of Entity Framework in a C# application.
+
+## Components
+
+### 1. DbContext
+
+The `DbContext` is the primary class that is responsible for interacting with the database. It represents a session with the database and provides APIs for querying and saving data. It also manages the mapping between domain objects and database tables.
+
+### 2. DbSet
+
+A `DbSet` represents a collection of entities of a specific type in the context of the database. It corresponds to a table or a view in the database. The `DbSet` class provides methods for querying and manipulating data.
+
+### 3. Entity Classes
+
+Entity classes are plain C# classes that represent entities in the domain model. Each entity class typically corresponds to a table in the database. Properties of entity classes map to columns in the database table.
+
+## Implementation Steps
+
+1. **Define Entity Classes**: Create plain C# classes to represent entities in the domain model. Decorate these classes with attributes to specify mappings to database tables and columns if needed.
+
+2. **Create DbContext Class**: Implement a subclass of `DbContext` that represents the database context for your application. Define `DbSet` properties for each entity class to represent the tables in the database.
+
+3. **Configure DbContext**: Override the `OnModelCreating` method of the `DbContext` class to configure the mappings between entity classes and database tables. Use Fluent API or data annotations for configuration.
+
+4. **Use DbContext in Business Logic**: Inject an instance of the `DbContext` class into the business logic layer of your application. Use it to query and manipulate data in the database.
+
+5. **Handle Data Access**: Use LINQ queries or methods provided by `DbSet` to query data from the database. Use methods like `Add`, `Update`, and `Remove` to manipulate data.
+
+
+**Entity Framework provides a powerful and convenient way to work with databases in C# applications. By understanding its architecture and components, developers can efficiently build data-driven applications with minimal boilerplate code.**
