@@ -132,3 +132,24 @@ Entity classes are plain C# classes that represent entities in the domain model.
 
 
 **Entity Framework provides a powerful and convenient way to work with databases in C# applications. By understanding its architecture and components, developers can efficiently build data-driven applications with minimal boilerplate code.**
+
+
+
+# Dapper
+
+Dapper is a lightweight, open-source Object-Relational Mapping (ORM) library for .NET. It was developed by the team at Stack Overflow to handle their massive traffic and database interactions efficiently.
+
+## Features
+
+- **Performance**: Dapper is known for its exceptional performance compared to other ORM frameworks. It achieves this by minimizing overhead and using raw SQL queries with simple object mapping.
+  
+- **Simplicity**: Dapper's API is designed to be simple and intuitive. It doesn't try to abstract away SQL completely, allowing developers to write optimized queries while still benefiting from ORM features.
+
+- **Flexibility**: Dapper doesn't impose strict conventions on how you should structure your data models or database schema. It allows for flexibility in how you map database records to objects.
+
+- **Support for Complex Types**: Dapper supports complex types, allowing you to map query results to nested objects or custom data structures easily.
+
+- **Performance Tuning**: Dapper provides features like result caching and query buffering to further optimize performance.
+
+- **Conclusion**
+Dapper is a powerful and lightweight ORM library for .NET developers. Its simplicity, flexibility, and performance make it a popular choice for projects where raw SQL control and performance are essential.
