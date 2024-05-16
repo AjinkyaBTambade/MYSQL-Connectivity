@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using TFLPortal.Models;
 using TFLPortal.Services;
+using TFLPortal.Entities;
+using TFLPortal.Services.Interfaces;
 
 namespace ConnectedWebApi.Controllers;
 
