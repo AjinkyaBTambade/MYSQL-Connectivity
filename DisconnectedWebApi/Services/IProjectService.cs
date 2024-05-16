@@ -1,4 +1,4 @@
-using TFLPortal.Models;
+using TFLPortal.Entities;
 
 namespace TFLPortal.Services;
 public interface IProjectService{

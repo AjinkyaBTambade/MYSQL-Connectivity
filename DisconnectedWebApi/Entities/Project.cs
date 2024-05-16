@@ -1,4 +1,4 @@
-﻿namespace TFLPortal.Models;
+﻿namespace TFLPortal.Entities;
 
 
 public class Project

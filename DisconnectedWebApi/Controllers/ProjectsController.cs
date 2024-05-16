@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TFLPortal.Models;
+using  TFLPortal.Entities;
 using TFLPortal.Services;
 
 namespace DisconnectedWebApi.Controllers;

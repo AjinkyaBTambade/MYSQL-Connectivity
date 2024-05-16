@@ -1,7 +1,7 @@
 using System.Data;
 using System.Runtime.CompilerServices;
 using MySql.Data.MySqlClient;
-using TFLPortal.Models;
+using TFLPortal.Entities;
 using TFLPortal.Services;
 
 namespace TFLPortal.Services;
