@@ -31,11 +31,9 @@ public class ProjectService : IProjectService
       MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
       adapter.Fill(dataSet);
       DataTable dataTable = dataSet.Tables[0];
-
       DataColumn[] keyColumn = new DataColumn[1];
       keyColumn[0] = dataTable.Columns["id"];
       dataTable.PrimaryKey = keyColumn;
-
       DataRow row = dataTable.Rows.Find(project.Id);
       row["title"] = project.Title;
       row["description"]=project.Description;
