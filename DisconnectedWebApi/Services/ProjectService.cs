@@ -1,53 +1,19 @@
-using System.Data;
-using System.Runtime.CompilerServices;
-using MySql.Data.MySqlClient;
+using TFLPortal.Repositories.Interfaces;
+using TFLPortal.Services.Interfaces;
 using TFLPortal.Entities;
-using TFLPortal.Services;
 
 namespace TFLPortal.Services;
 public class ProjectService : IProjectService
 {
+    private readonly IProjectRepository _repository;
+    public ProjectService(IProjectRepository repository)
+    {
+        _repository = repository;
+    }
 
-  public readonly IConfiguration configuration;
-  private readonly string _connectionString;
-  public ProjectService(IConfiguration _configuration)
-  {
-    _connectionString = _configuration.GetConnectionString("DefaultConnection") ?? throw new ArgumentNullException("connectionString");
-
-    configuration = _configuration;
-  }
   public bool Update(Project project)
   {
-    bool status = false;
-    MySqlConnection connection = new MySqlConnection();
-    connection.ConnectionString = _connectionString;
-    try
-    {
-
-      string query = "select * from projects";
-      MySqlCommand command = new MySqlCommand(query, connection);
-      MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-      DataSet dataSet = new DataSet();
-      MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-      adapter.Fill(dataSet);
-      DataTable dataTable = dataSet.Tables[0];
-      DataColumn[] keyColumn = new DataColumn[1];
-      keyColumn[0] = dataTable.Columns["id"];
-      dataTable.PrimaryKey = keyColumn;
-      DataRow row = dataTable.Rows.Find(project.Id);
-      row["title"] = project.Title;
-      row["description"]=project.Description;
-      adapter.Update(dataSet);
-      status = true;
-
-
-    }
-    catch (Exception e)
-    {
-      Console.WriteLine(e.Message);
-      throw e;
-    }
-    return status;
+   return _repository.Update(project);
   }
 
 
