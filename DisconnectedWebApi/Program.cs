@@ -1,10 +1,13 @@
-using TFLPortal.Services;
-
+using TFLPortal.Repositories;
+using TFLPortal.Services;   
+using TFLPortal.Services.Interfaces;
+using TFLPortal.Repositories.Interfaces; 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IProjectService,ProjectService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
