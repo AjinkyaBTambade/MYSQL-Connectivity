@@ -3,7 +3,7 @@ using TFLPortal.Repositories.Interfaces;
 
 namespace TFLPortal.Services.Interfaces
 {
-    public interface IAssessmentDapperService:IAssessmentDapperRepository{
+    public interface IProjectDapperService:IProjectDapperRepository{
     
  }
 }

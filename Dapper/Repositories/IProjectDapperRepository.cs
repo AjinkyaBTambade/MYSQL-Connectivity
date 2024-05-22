@@ -1,7 +1,7 @@
 using TFLPortal.Entities;
 
 namespace TFLPortal.Repositories.Interfaces;
-public interface IAssessmentDapperRepository{
+public interface IProjectDapperRepository{
 
 
     public  Task<List<Project>> GetProjects();
