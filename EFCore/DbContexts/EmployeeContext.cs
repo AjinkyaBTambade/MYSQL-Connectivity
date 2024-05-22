@@ -13,7 +13,7 @@ namespace EFCore.DbContexts
     {   
         public DbSet<Employee> Employees { get; set; }
 
-        public string connectionString = @"Server=DESKTOP-0E2DNFV\SQLEXPRESS02;Database=AssessmentDB;Trusted_Connection=True;Encrypt=False";
+        public string connectionString = @"Data Source=DESKTOP-0E2DNFV\SQLEXPRESS;Initial Catalog=AssessmentDB;Integrated Security=True;Connect Timeout=30;Encrypt=False";
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
