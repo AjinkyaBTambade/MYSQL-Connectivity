@@ -134,22 +134,48 @@ Entity classes are plain C# classes that represent entities in the domain model.
 **Entity Framework provides a powerful and convenient way to work with databases in C# applications. By understanding its architecture and components, developers can efficiently build data-driven applications with minimal boilerplate code.**
 
 
+# Dapper Architecture in C#
 
-# Dapper
+## Overview
 
-Dapper is a lightweight, open-source Object-Relational Mapping (ORM) library for .NET. It was developed by the team at Stack Overflow to handle their massive traffic and database interactions efficiently.
+Dapper is a lightweight, open-source Object-Relational Mapping (ORM) library for .NET. Developed by the team at Stack Overflow, it is designed to handle high traffic and complex database interactions efficiently. Dapper is known for its simplicity, flexibility, and exceptional performance, making it a popular choice for projects where raw SQL control and performance are crucial.
 
-## Features
+## Components
 
-- **Performance**: Dapper is known for its exceptional performance compared to other ORM frameworks. It achieves this by minimizing overhead and using raw SQL queries with simple object mapping.
-  
-- **Simplicity**: Dapper's API is designed to be simple and intuitive. It doesn't try to abstract away SQL completely, allowing developers to write optimized queries while still benefiting from ORM features.
+### 1. Connection
 
-- **Flexibility**: Dapper doesn't impose strict conventions on how you should structure your data models or database schema. It allows for flexibility in how you map database records to objects.
+In Dapper, the primary class for interacting with the database is a connection, typically an instance of `IDbConnection`. Dapper extends `IDbConnection` with several methods to execute queries and map results to objects.
 
-- **Support for Complex Types**: Dapper supports complex types, allowing you to map query results to nested objects or custom data structures easily.
+### 2. Query Methods
 
-- **Performance Tuning**: Dapper provides features like result caching and query buffering to further optimize performance.
+Dapper provides several extension methods for `IDbConnection` to execute SQL queries and commands. These include:
 
-- **Conclusion**
-Dapper is a powerful and lightweight ORM library for .NET developers. Its simplicity, flexibility, and performance make it a popular choice for projects where raw SQL control and performance are essential.
+- `Query`: Executes a SQL query and maps the result to a collection of objects.
+- `QueryFirst`: Executes a SQL query and maps the first result to an object.
+- `QuerySingle`: Executes a SQL query and maps the single result to an object.
+- `Execute`: Executes a SQL command and returns the number of affected rows.
+
+### 3. Mapping
+
+Dapper uses simple conventions to map query results to objects. By default, it maps columns to properties with matching names. Dapper also supports custom mappings through attributes and lambda expressions.
+
+### 4. Stored Procedures
+
+Dapper makes it easy to call stored procedures. You can pass parameters to the stored procedure and map the results to objects.
+
+### 5. Performance Features
+
+Dapper includes features to enhance performance, such as result caching and query buffering. These features help to optimize data access and reduce database load.
+
+## Implementation Steps
+
+1. **Set Up Database Connection**: Create an instance of `IDbConnection`, typically using `SqlConnection` for SQL Server. Open the connection to the database.
+
+2. **Execute Queries**: Use Dapper's extension methods to execute SQL queries and commands. Use `Query` for retrieving data and `Execute` for modifying data.
+
+3. **Map Results to Objects**: Define C# classes to represent the data models. Dapper will automatically map the query results to instances of these classes based on column names.
+
+4. **Call Stored Procedures**: Use Dapper to call stored procedures by specifying the procedure name and parameters. Map the results to objects as needed.
+
+5. **Optimize Performance**: Utilize Dapper's performance features, such as result caching and query buffering, to improve efficiency and reduce database load.
+
