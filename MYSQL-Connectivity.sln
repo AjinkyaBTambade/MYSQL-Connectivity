@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework", "Entity 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore", "EFCore\EFCore.csproj", "{A66B1848-FF33-46E1-B1A3-A730CD31D46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkForMultipleTables", "EntityFrameworkForMultipleTables\EntityFrameworkForMultipleTables.csproj", "{50C18F9B-6B78-4E72-83B0-FB39212DD7EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkForMultipleTables", "EntityFrameworkForMultipleTables\EntityFrameworkForMultipleTables.csproj", "{50C18F9B-6B78-4E72-83B0-FB39212DD7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreNew", "EFCoreNew\EFCoreNew.csproj", "{2E2DF6DB-3371-413C-A1AF-75CCB946505E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{50C18F9B-6B78-4E72-83B0-FB39212DD7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C18F9B-6B78-4E72-83B0-FB39212DD7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C18F9B-6B78-4E72-83B0-FB39212DD7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2DF6DB-3371-413C-A1AF-75CCB946505E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2DF6DB-3371-413C-A1AF-75CCB946505E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2DF6DB-3371-413C-A1AF-75CCB946505E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2DF6DB-3371-413C-A1AF-75CCB946505E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A66B1848-FF33-46E1-B1A3-A730CD31D46C} = {D7999177-4D04-4BF3-B89A-E1277A43A418}
 		{50C18F9B-6B78-4E72-83B0-FB39212DD7EC} = {D7999177-4D04-4BF3-B89A-E1277A43A418}
+		{2E2DF6DB-3371-413C-A1AF-75CCB946505E} = {D7999177-4D04-4BF3-B89A-E1277A43A418}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {236F902E-4650-4543-A3A3-C5A667502359}
