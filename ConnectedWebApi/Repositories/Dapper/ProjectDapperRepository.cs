@@ -1,11 +1,8 @@
 using System.Data;
 using Dapper;
-using MySql.Data.MySqlClient;
 using TFLPortal.Entities;
+using MySql.Data.MySqlClient;
 using TFLPortal.Repositories.Interfaces;
-using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace TFLPortal.Repositories
 {
@@ -30,94 +27,58 @@ namespace TFLPortal.Repositories
         {
             using (IDbConnection connection = CreateConnection())
             {
-                try
-                {
-                    string query = "SELECT id, title, description, startdate, enddate, status FROM projects";
-                    return connection.QueryAsync<Project>(query).ContinueWith(task => task.Result.AsList());
-                }
-                catch (Exception e)
-                {
-                    // Log the exception here
-                    throw;
-                }
+                string query = "SELECT id, title, description, startdate, enddate, status FROM projects";
+                var result = connection.Query<Project>(query).AsList();
+                return Task.FromResult(result);
             }
         }
 
-        public Task<Project> GetProject(int id)
+        public Project GetProject(int id)
         {
             using (IDbConnection connection = CreateConnection())
             {
-                try
-                {
-                    string query = "SELECT id, title, description, startdate, enddate, status FROM projects WHERE id = @Id";
-                    return connection.QueryFirstOrDefaultAsync<Project>(query, new { Id = id });
-                }
-                catch (Exception e)
-                {
-                    // Log the exception here
-                    throw;
-                }
+                string query = "SELECT id, title, description, startdate, enddate, status FROM projects WHERE id = @Id";
+                return connection.QueryFirstOrDefault<Project>(query, new { Id = id });
             }
         }
 
-        public Task<bool> Insert(Project project)
+        public bool Insert(Project project)
         {
             if (project == null)
                 throw new ArgumentNullException(nameof(project));
 
             using (IDbConnection connection = CreateConnection())
             {
-                try
-                {
-                    string query = @"INSERT INTO projects (title, description, startdate, enddate, status) 
-                                    VALUES (@Title, @Description, @StartDate, @EndDate, @Status)";
-                    return connection.ExecuteAsync(query, project).ContinueWith(task => task.Result > 0);
-                }
-                catch (Exception e)
-                {
-                    // Log the exception here
-                    throw;
-                }
+                string query = @"INSERT INTO projects (title, description, startdate, enddate, status) 
+                                 VALUES (@Title, @Description, @StartDate, @EndDate, @Status)";
+                int rowsAffected = connection.Execute(query, project);
+                return rowsAffected > 0;
             }
         }
 
-        public Task<bool> Update(Project project)
+        public bool Update(Project project)
         {
             if (project == null)
                 throw new ArgumentNullException(nameof(project));
 
             using (IDbConnection connection = CreateConnection())
             {
-                try
-                {
-                    string query = @"UPDATE projects 
-                                    SET title = @Title, description = @Description, startdate = @StartDate, 
-                                    enddate = @EndDate, status = @Status 
-                                    WHERE id = @Id";
-                    return connection.ExecuteAsync(query, project).ContinueWith(task => task.Result > 0);
-                }
-                catch (Exception e)
-                {
-                    // Log the exception here
-                    throw;
-                }
+                string query = @"UPDATE projects 
+                                 SET title = @Title, description = @Description, startdate = @StartDate, 
+                                 enddate = @EndDate, status = @Status 
+                                 WHERE id = @Id";
+                int rowsAffected = connection.Execute(query, project);
+                return rowsAffected > 0;
             }
         }
 
-        public Task<bool> Delete(int id)
+        public bool Delete(int id)
         {
             using (IDbConnection connection = CreateConnection())
             {
-                try
-                {
-                    string query = "DELETE FROM projects WHERE id = @Id";
-                    return connection.ExecuteAsync(query, new { Id = id }).ContinueWith(task => task.Result > 0);
-                }
-                catch (Exception e)
-                {
-                    // Log the exception here
-                    throw;
-                }
+                string query = "DELETE FROM projects WHERE id = @Id";
+                int rowsAffected = connection.Execute(query, new { Id = id });
+                return rowsAffected > 0;
             }
         }
     }

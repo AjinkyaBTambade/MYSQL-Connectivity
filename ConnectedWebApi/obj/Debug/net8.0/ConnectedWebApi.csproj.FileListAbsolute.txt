@@ -112,3 +112,4 @@ C:\Users\admin\Desktop\Github Repo\MYSQL-Connectivity\ConnectedWebApi\obj\Debug\
 C:\Users\admin\Desktop\Github Repo\MYSQL-Connectivity\ConnectedWebApi\obj\Debug\net8.0\ConnectedWebApi.pdb
 C:\Users\admin\Desktop\Github Repo\MYSQL-Connectivity\ConnectedWebApi\obj\Debug\net8.0\ConnectedWebApi.genruntimeconfig.cache
 C:\Users\admin\Desktop\Github Repo\MYSQL-Connectivity\ConnectedWebApi\obj\Debug\net8.0\ref\ConnectedWebApi.dll
+C:\Users\admin\Desktop\Github Repo\MYSQL-Connectivity\ConnectedWebApi\bin\Debug\net8.0\Dapper.dll
