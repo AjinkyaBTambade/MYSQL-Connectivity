@@ -25,11 +25,11 @@ public class ProjectService : IProjectService
     {
         return _repository.Insert(project);
     }
-    public bool Update(Project project)
+    public async Task <bool> Update(Project project)
      {
-        return _repository.Update(project);
+        return await _repository.Update(project);
     }
-    public bool Delete(int id)
+    public bool Delete(int id) 
     {
         return _repository.Delete(id);
     }

@@ -13,20 +13,20 @@ public class ProjectRepository : IProjectRepository
         _configuration = configuration;
     }
 
-    public bool Update(Project project)
+    public async Task<bool> Update(Project project)
     {
         bool status = false;
         using (MySqlConnection connection = new MySqlConnection(_configuration.GetConnectionString("DefaultConnection")))
         {
             try
             {
-                connection.Open();
+                await connection.OpenAsync();
                 string query = "UPDATE projects SET title = @Title, description = @Description WHERE id = @Id";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Title", project.Title);
                 command.Parameters.AddWithValue("@Description", project.Description);
                 command.Parameters.AddWithValue("@Id", project.Id);
-                int rowsAffected = command.ExecuteNonQuery();
+                int rowsAffected = await command.ExecuteNonQueryAsync();
                 status = rowsAffected > 0;
             }
             catch (Exception e)

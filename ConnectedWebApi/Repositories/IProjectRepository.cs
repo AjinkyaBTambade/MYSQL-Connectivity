@@ -7,6 +7,6 @@ public interface IProjectRepository{
 
     public Project GetProject(int id);
     public bool Insert(Project project);
-    public  bool Update(Project project);
+    public Task <bool> Update(Project project);
     public  bool Delete(int id);
 }
