@@ -18,10 +18,10 @@ public class ProjectController : ControllerBase
 
 
     [HttpPut("update")]
-    public  async Task <bool> Update(Project project)
+    public  bool Update(Project project)
     {
         bool status = false;
-        status = await _projectService.Update(project);
+        status =  _projectService.Update(project);
         return status;
     }
 

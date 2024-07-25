@@ -25,9 +25,9 @@ public class ProjectService : IProjectService
     {
         return _repository.Insert(project);
     }
-    public async Task <bool> Update(Project project)
+    public bool Update(Project project)
      {
-        return await _repository.Update(project);
+        return _repository.Update(project);
     }
     public bool Delete(int id) 
     {

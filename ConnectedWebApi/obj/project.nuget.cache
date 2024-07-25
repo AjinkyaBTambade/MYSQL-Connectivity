@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aIAuW2Un9w0dhNNOTOkbgQxwso2JoH2GYWODnyTJYpJXAgJpe4qrAE7QJ67h8DQIVgeUSIiQa+PcuIUUmXC0EQ==",
+  "dgSpecHash": "ySzGYOuDUjVk1Fg8RsbonMgQqBvifHumZXULZHjGC2MaHCUEeS53SgL6IcHRe4dVaK+0iuEUX3E2tH+vB97J6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\ConnectedWebApi\\ConnectedWebApi.csproj",
+  "projectFilePath": "D:\\Github Repo\\MYSQL-Connectivity\\ConnectedWebApi\\ConnectedWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
