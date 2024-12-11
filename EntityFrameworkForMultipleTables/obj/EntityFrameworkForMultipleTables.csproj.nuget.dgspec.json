@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj": {}
+    "E:\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj": {
+    "E:\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj",
+        "projectUniqueName": "E:\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj",
         "projectName": "EntityFrameworkForMultipleTables",
-        "projectPath": "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Desktop\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\obj\\",
+        "projectPath": "E:\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\EntityFrameworkForMultipleTables.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "E:\\Github Repo\\MYSQL-Connectivity\\EntityFrameworkForMultipleTables\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,9 +50,13 @@
               "target": "Package",
               "version": "[8.0.5, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[8.0.5, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
@@ -74,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

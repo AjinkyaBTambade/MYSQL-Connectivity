@@ -1,17 +1,12 @@
 ﻿using EntityFrameworkForMultipleTables.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityFrameworkForMultipleTables.DbContexts
 {
     public class BlogContext : DbContext
     {
-        public string connectionString = @"Data Source=DESKTOP-0E2DNFV\SQLEXPRESS;Initial Catalog=EntityFramework;Integrated Security=True;Connect Timeout=30;Encrypt=False";
+        private string connectionString = "Server=localhost;Port=3306;User=root;Password=password;Database=entityframeworkdb";
 
         public DbSet<Author> Author { get; set; }
         public DbSet<Blog> Blog { get; set; }
@@ -19,9 +14,10 @@ namespace EntityFrameworkForMultipleTables.DbContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseMySql(
+                connectionString,
+                new MySqlServerVersion(new Version(8, 0, 02)) 
+            );
         }
     }
-
-
 }

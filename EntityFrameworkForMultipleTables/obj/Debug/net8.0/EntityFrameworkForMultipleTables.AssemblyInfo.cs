@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EntityFrameworkForMultipleTables")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f334960f2e1cf82fc492d180b0abd28da69a865")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcbf29b63ca306c89f23095a24f1c3f9e0e1645b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EntityFrameworkForMultipleTables")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EntityFrameworkForMultipleTables")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

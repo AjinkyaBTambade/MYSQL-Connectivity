@@ -11,6 +11,6 @@ using (var context = new EmployeeContext())
     var employees = repo.GetAll();
     foreach (var employee in employees)
     {
-        Console.WriteLine(employee.FirstName + "  " + employee.LastName + "  " + employee.Contact);
+        Console.WriteLine(employee.FirstName + "  " + employee.LastName + "  " + employee.Contact + "  " + employee.Email);
     }
 }

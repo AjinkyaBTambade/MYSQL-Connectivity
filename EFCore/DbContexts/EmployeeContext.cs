@@ -1,25 +1,21 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using EFCore.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFCore.DbContexts
 {
-   public class EmployeeContext : DbContext
-    {   
+    public class EmployeeContext : DbContext
+    {
         public DbSet<Employee> Employees { get; set; }
 
-        public string connectionString = @"Data Source=DESKTOP-0E2DNFV\SQLEXPRESS;Initial Catalog=EntityFramework;Integrated Security=True;Connect Timeout=30;Encrypt=False";
-
+        private string connectionString = "Server=localhost;Port=3306;User=root;Password=password;Database=assessmentdb";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseMySql(
+                connectionString,
+                new MySqlServerVersion(new Version(8, 0, 02)) 
+            );
         }
     }
 }
-
